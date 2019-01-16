@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Net.Http;
 using System.Threading.Tasks;
+using Store.Utils.Extension;
 
 namespace Store.Repositorio.Helper
 {
@@ -17,11 +18,13 @@ namespace Store.Repositorio.Helper
 
         public async Task<T> Retornar<T>(string url)
         {
-            var response = await _httpClient.GetAsync(url);
+            HttpResponseMessage response = await _httpClient.GetAsync(url);
             if (response.IsSuccessStatusCode)
             {
-                var encoded = await response.Content.ReadAsStringAsync();
+                string encoded = await response.Content.ReadAsStringAsync();
+                return encoded.Deserialize<T>();
             }
+            return default;
         }
     }
 }
