@@ -13,7 +13,7 @@ namespace Store.Dominio.Servico
             _repositorio = repositorio;
         }
 
-        public async Task<T> RetornarPorId(long id)
+        public virtual async Task<T> RetornarPorId(long id)
         {
             return await _repositorio.RetornarPorId(id);
         }

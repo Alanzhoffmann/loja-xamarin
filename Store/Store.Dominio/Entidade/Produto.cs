@@ -18,6 +18,7 @@ namespace Store.Dominio.Entidade
         [JsonProperty("price")]
         public decimal Preco { get; set; }
 
+        [JsonIgnore]
         public Categoria Categoria { get; set; }
 
         [JsonProperty("category_id")]
