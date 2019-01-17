@@ -10,7 +10,7 @@ namespace Store.Repositorio.Repositorio
     {
         internal abstract string RetornarUrlConsulta();
 
-        public async Task<IList<T>> RetornarTodos(Predicate<T> filtro = null)
+        public virtual async Task<IList<T>> RetornarTodos(Predicate<T> filtro = null)
         {
             string url = RetornarUrlConsulta();
             T[] dados = await WebRequest.Instancia.Retornar<T[]>(url);

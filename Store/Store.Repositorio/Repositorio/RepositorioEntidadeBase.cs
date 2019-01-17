@@ -7,7 +7,7 @@ namespace Store.Repositorio.Repositorio
 {
     public abstract class RepositorioEntidadeBase<T> : RepositorioBase<T>, IRepositorioEntidadeBase<T> where T : EntidadeBase
     {
-        public async Task<T> RetornarPorId(long id)
+        public virtual async Task<T> RetornarPorId(long id)
         {
             IList<T> dados = await RetornarTodos(t => t.Id == id);
             return dados.Count > 0 ? dados[0] : default;
