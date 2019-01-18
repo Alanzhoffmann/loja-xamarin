@@ -34,5 +34,11 @@ namespace Store.Dominio.Servico
 
             return promocoes;
         }
+
+        public async Task<Promocao> RetornarPorCategoria(int categoriaId)
+        {
+            IList<Promocao> promocoes = await base.RetornarTodos(p => p.CategoriaId == categoriaId);
+            return promocoes?.FirstOrDefault();
+        }
     }
 }

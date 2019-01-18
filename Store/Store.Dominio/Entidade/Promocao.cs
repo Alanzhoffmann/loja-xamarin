@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using System.Linq;
+using Newtonsoft.Json;
 
 namespace Store.Dominio.Entidade
 {
@@ -26,6 +27,22 @@ namespace Store.Dominio.Entidade
         }
 
         [JsonProperty("policies")]
-        public AplicacaoPromocao[] AplicacoesPromocao { get; set; }
+        public Desconto[] Descontos { get; set; }
+
+        public decimal RetornarValorDescontoPorQuantidade(int quantidade)
+        {
+            if (Descontos != null)
+            {
+                foreach (Desconto desconto in Descontos.OrderByDescending(d => d.QuantidadeMinima))
+                {
+                    if (quantidade > desconto.QuantidadeMinima)
+                    {
+                        return desconto.ValorDesconto;
+                    }
+                }
+            }
+
+            return 0;
+        }
     }
 }

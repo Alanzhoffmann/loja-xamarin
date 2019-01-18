@@ -2,7 +2,7 @@
 
 namespace Store.Dominio.Entidade
 {
-    public class AplicacaoPromocao
+    public class Desconto
     {
         [JsonProperty("min")]
         public int QuantidadeMinima { get; set; }
