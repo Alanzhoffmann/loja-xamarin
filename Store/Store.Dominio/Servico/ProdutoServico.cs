@@ -42,5 +42,10 @@ namespace Store.Dominio.Servico
 
             return produto;
         }
+
+        public async Task<IList<Produto>> RetornarPorCategoria(int categoriaId)
+        {
+            return await RetornarTodos(p => p.CategoriaId == categoriaId);
+        }
     }
 }
