@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Store.Dominio.Entidade;
-using Store.Dominio.Interface;
+using Store.Dominio.Interface.Repositorio;
+using Store.Dominio.Interface.Servico;
 
 namespace Store.Dominio.Servico
 {
-    public class ProdutoServico : ServicoEntidadeBase<Produto>
+    public class ProdutoServico : ServicoEntidadeBase<Produto>, IProdutoServico
     {
         private readonly IProdutoRepositorio _repositorio;
         private readonly ICategoriaRepositorio _categoriaRepositorio;

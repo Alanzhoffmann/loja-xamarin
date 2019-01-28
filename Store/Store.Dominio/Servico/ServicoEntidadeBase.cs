@@ -1,10 +1,11 @@
 ﻿using System.Threading.Tasks;
 using Store.Dominio.Entidade;
-using Store.Dominio.Interface;
+using Store.Dominio.Interface.Repositorio;
+using Store.Dominio.Interface.Servico;
 
 namespace Store.Dominio.Servico
 {
-    public class ServicoEntidadeBase<T> : ServicoBase<T> where T : EntidadeBase
+    public class ServicoEntidadeBase<T> : ServicoBase<T>, IServicoEntidadeBase<T> where T : EntidadeBase
     {
         private readonly IRepositorioEntidadeBase<T> _repositorio;
 

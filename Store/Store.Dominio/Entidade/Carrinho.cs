@@ -14,7 +14,7 @@ namespace Store.Dominio.Entidade
 
         public IReadOnlyList<ItemCarrinho> Itens => _itens;
 
-        public decimal ValorTotal => Itens.Sum(i => i.ValorFinal);
+        public decimal ValorTotal => Itens.Sum(i => i.ValorLiquido);
 
         public ItemCarrinho AdicionarItem(ItemCarrinho item)
         {

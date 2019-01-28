@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using Store.Dominio.Entidade;
-using Store.Dominio.Interface;
+using Store.Dominio.Interface.Repositorio;
 
 namespace Store.Repositorio.Repositorio
 {

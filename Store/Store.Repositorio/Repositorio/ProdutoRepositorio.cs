@@ -1,5 +1,5 @@
 ﻿using Store.Dominio.Entidade;
-using Store.Dominio.Interface;
+using Store.Dominio.Interface.Repositorio;
 
 namespace Store.Repositorio.Repositorio
 {

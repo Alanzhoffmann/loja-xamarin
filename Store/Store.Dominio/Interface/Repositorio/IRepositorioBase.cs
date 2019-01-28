@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace Store.Dominio.Interface
+namespace Store.Dominio.Interface.Repositorio
 {
     public interface IRepositorioBase<T>
     {

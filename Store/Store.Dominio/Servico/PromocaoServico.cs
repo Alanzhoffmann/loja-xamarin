@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Store.Dominio.Entidade;
-using Store.Dominio.Interface;
+using Store.Dominio.Interface.Repositorio;
+using Store.Dominio.Interface.Servico;
 
 namespace Store.Dominio.Servico
 {
-    public class PromocaoServico : ServicoBase<Promocao>
+    public class PromocaoServico : ServicoBase<Promocao>, IPromocaoServico
     {
         private readonly IPromocaoRepositorio _repositorio;
         private readonly ICategoriaRepositorio _categoriaRepositorio;
@@ -35,10 +36,9 @@ namespace Store.Dominio.Servico
             return promocoes;
         }
 
-        public async Task<Promocao> RetornarPorCategoria(int categoriaId)
+        public async Task<IList<Promocao>> RetornarPorCategoria(int categoriaId)
         {
-            IList<Promocao> promocoes = await base.RetornarTodos(p => p.CategoriaId == categoriaId);
-            return promocoes?.FirstOrDefault();
+            return await base.RetornarTodos(p => p.CategoriaId == categoriaId);
         }
     }
 }
