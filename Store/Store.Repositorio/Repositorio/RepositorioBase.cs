@@ -22,5 +22,10 @@ namespace Store.Repositorio.Repositorio
             }
             return null;
         }
+
+        public Task<T> Salvar(T obj)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

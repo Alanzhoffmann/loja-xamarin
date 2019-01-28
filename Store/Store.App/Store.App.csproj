@@ -5,9 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="DTO\" />
     <Folder Include="AppService\" />
-    <Folder Include="Interface\" />
   </ItemGroup>
 
 </Project>
