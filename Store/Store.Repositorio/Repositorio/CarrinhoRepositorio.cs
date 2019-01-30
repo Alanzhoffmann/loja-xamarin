@@ -8,7 +8,8 @@ namespace Store.Repositorio.Repositorio
 {
     public class CarrinhoRepositorio : RepositorioBase<Carrinho>, ICarrinhoRepositorio
     {
-        private readonly List<Carrinho> carrinhos = new List<Carrinho>();
+        // TODO: Persistência em banco
+        private static readonly List<Carrinho> carrinhos = new List<Carrinho>();
 
         public override async Task<IList<Carrinho>> RetornarTodos(Predicate<Carrinho> filtro = null)
         {

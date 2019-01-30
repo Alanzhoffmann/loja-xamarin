@@ -7,6 +7,6 @@ namespace Store.Dominio.Interface.Servico
     {
         Task<Carrinho> RetornarAtual();
 
-        Task<Carrinho> AdicionarItem(Produto produto, int quantidade = 1);
+        Task<Carrinho> AdicionarItem(long produtoId, int quantidade = 1);
     }
 }

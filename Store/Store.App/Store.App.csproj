@@ -5,7 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="AppService\" />
+    <ProjectReference Include="..\Store.Dominio\Store.Dominio.csproj" />
   </ItemGroup>
 
 </Project>

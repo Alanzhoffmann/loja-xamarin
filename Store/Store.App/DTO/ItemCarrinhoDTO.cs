@@ -1,7 +1,24 @@
-﻿namespace Store.App.DTO
+﻿using Store.Dominio.Entidade;
+
+namespace Store.App.DTO
 {
     public class ItemCarrinhoDTO
     {
+        public ItemCarrinhoDTO()
+        {
+        }
+
+        public ItemCarrinhoDTO(ItemCarrinho itemCarrinho)
+        {
+            Quantidade = itemCarrinho.Quantidade;
+            Produto = new ProdutoDTO(itemCarrinho.Produto);
+            PorcentagemDesconto = itemCarrinho.PorcentagemDesconto;
+            ValorUnitario = itemCarrinho.ValorUnitario;
+            ValorBruto = itemCarrinho.ValorBruto;
+            ValorDesconto = itemCarrinho.ValorDesconto;
+            ValorLiquido = itemCarrinho.ValorLiquido;
+        }
+
         public int Quantidade { get; set; }
 
         public ProdutoDTO Produto { get; set; }
